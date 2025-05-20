@@ -19,7 +19,7 @@ func main() {
 
 	for {
 		todo.PrintTodos(&todos)
-		fmt.Println("Commands: add, delete, complete, uncomplete, exit ")
+		fmt.Println("Commands: add, delete, toggle, exit ")
 
 		fmt.Print("Enter command: ")
 		scanner.Scan()
@@ -32,9 +32,7 @@ func main() {
 			todo.DeleteTodo(&todos)
 		case "exit":
 			return
-		case "complete":
-			todo.ToggleTodo(&todos)
-		case "uncomplete":
+		case "toggle":
 			todo.ToggleTodo(&todos)
 		default:
 			log.Fatal("Invalid Command!")
